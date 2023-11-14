@@ -24,90 +24,6 @@
             </objects>
             <point key="canvasLocation" x="-413" y="-60"/>
         </scene>
-        <!--Page 1-->
-        <scene sceneID="LHy-8G-Mu2">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="NBt-iW-8ra" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1WO-IJ-ub1">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="EXQ-Cm-PnK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Page 1" id="4l2-VX-yTr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WXV-n8-P4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-412" y="684"/>
-        </scene>
-        <!--Page2 View Controller-->
-        <scene sceneID="UX6-K4-IAd">
-            <objects>
-                <viewController id="VMf-l0-w2W" customClass="Page2ViewController" customModule="UIPresentationController_Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zpk-SB-s8m">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-mo-KAU">
-                                <rect key="frame" x="0.0" y="59" width="393" height="647"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="VMf-l0-w2W" id="m5T-qg-5so"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdT-Oq-qst">
-                                <rect key="frame" x="169.66666666666666" y="714" width="54" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Buy"/>
-                                <connections>
-                                    <action selector="onBuy:" destination="VMf-l0-w2W" eventType="touchUpInside" id="cGN-nC-cnT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="aCj-MA-gnK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="wZM-mo-KAU" firstAttribute="top" secondItem="aCj-MA-gnK" secondAttribute="top" id="AV5-0X-c90"/>
-                            <constraint firstItem="aCj-MA-gnK" firstAttribute="trailing" secondItem="wZM-mo-KAU" secondAttribute="trailing" id="Enx-TZ-dlg"/>
-                            <constraint firstItem="wZM-mo-KAU" firstAttribute="leading" secondItem="aCj-MA-gnK" secondAttribute="leading" id="doy-mg-Yh6"/>
-                            <constraint firstItem="xdT-Oq-qst" firstAttribute="centerX" secondItem="aCj-MA-gnK" secondAttribute="centerX" id="exI-RV-bQH"/>
-                            <constraint firstItem="xdT-Oq-qst" firstAttribute="top" secondItem="wZM-mo-KAU" secondAttribute="bottom" constant="8" symbolic="YES" id="qSL-UE-wzV"/>
-                            <constraint firstItem="aCj-MA-gnK" firstAttribute="bottom" secondItem="xdT-Oq-qst" secondAttribute="bottom" constant="34" id="xFO-ww-pl8"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="am6-aB-V3l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="490.83969465648852" y="683.80281690140851"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="bao-kD-Zml">
-            <objects>
-                <viewController id="r7G-OB-72K" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wUW-D8-D12">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThQ-ft-Q87">
-                                <rect key="frame" x="170" y="410.66666666666669" width="53" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="nrI-Pw-aon"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ThQ-ft-Q87" firstAttribute="centerX" secondItem="nrI-Pw-aon" secondAttribute="centerX" id="4Bd-fu-qzx"/>
-                            <constraint firstItem="ThQ-ft-Q87" firstAttribute="centerY" secondItem="nrI-Pw-aon" secondAttribute="centerY" id="TXt-vi-nfX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ebB-xe-ql2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T0d-23-Kg0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1420.6106870229007" y="641.54929577464793"/>
-        </scene>
         <!--Home Page-->
         <scene sceneID="7XY-MP-y7E">
             <objects>
@@ -116,71 +32,116 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aj-mi-hab">
-                                <rect key="frame" x="159.66666666666666" y="280.66666666666669" width="74" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Page 1"/>
-                                <connections>
-                                    <segue destination="NBt-iW-8ra" kind="show" identifier="Page1" id="cqX-Rb-Hv5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCj-rr-Oc8">
-                                <rect key="frame" x="158" y="323.66666666666669" width="77" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Page 2"/>
-                                <connections>
-                                    <segue destination="VMf-l0-w2W" kind="presentation" id="xeI-i3-QJ1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiz-wm-jOB">
-                                <rect key="frame" x="146.66666666666666" y="366.66666666666669" width="100" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add Pizza"/>
-                                <connections>
-                                    <action selector="addItem:" destination="hCQ-H9-sch" eventType="touchUpInside" id="oEg-Iv-Igt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJy-ui-gej">
-                                <rect key="frame" x="146" y="409.66666666666669" width="101" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add Pasta"/>
-                                <connections>
-                                    <action selector="addItem:" destination="hCQ-H9-sch" eventType="touchUpInside" id="GoJ-ki-Dff"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZz-Dx-ggC">
-                                <rect key="frame" x="158" y="452.66666666666669" width="77" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Page 3"/>
-                                <connections>
-                                    <segue destination="r7G-OB-72K" kind="presentation" identifier="Page3" id="VNO-PC-wsE"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3I-It-Ygc">
+                                <rect key="frame" x="20" y="102.99999999999997" width="353" height="392.33333333333326"/>
+                                <string key="text">Experience the exquisite flavors of Italy and Georgia! Explore a culinary journey through the rich, diverse cuisines of these two vibrant cultures. From the aromatic herbs and savory sauces of Italian dishes to the bold spices and tantalizing flavors of Georgian cuisine, immerse yourself in a world of delicious possibilities. Discover the secrets behind beloved recipes, savor traditional tastes, and indulge in a fusion of culinary artistry that celebrates the best of both Italian and Georgian gastronomy.</string>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="byl-iC-n83">
+                                <rect key="frame" x="4" y="442.33333333333326" width="385" height="375.66666666666674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ETy-O4-eMz">
+                                        <rect key="frame" x="0.0" y="0.0" width="188.66666666666666" height="375.66666666666669"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="kKN-Ts-uhN">
+                                                <rect key="frame" x="0.0" y="0.0" width="188.66666666666666" height="341.33333333333331"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwd-Gq-H1d">
+                                                <rect key="frame" x="0.0" y="341.33333333333331" width="188.66666666666666" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Italian"/>
+                                                <connections>
+                                                    <segue destination="ev7-JJ-ogn" kind="show" id="B8t-Ue-Avg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="kMy-Aq-B0w" appends="YES" id="GKc-0e-puO"/>
+                                        </connections>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EZx-Tt-1Fv">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="188.33333333333337" height="375.66666666666669"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="JUW-Mk-eQn">
+                                                <rect key="frame" x="0.0" y="0.0" width="188.33333333333334" height="341.33333333333331"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sb-ys-1sq">
+                                                <rect key="frame" x="0.0" y="341.33333333333331" width="188.33333333333334" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Georgian"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lhg-Wa-NlB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aZz-Dx-ggC" firstAttribute="top" secondItem="LJy-ui-gej" secondAttribute="bottom" constant="8" symbolic="YES" id="3ER-tg-Z0J"/>
-                            <constraint firstItem="oiz-wm-jOB" firstAttribute="centerX" secondItem="UV1-LF-fuH" secondAttribute="centerX" id="AjQ-0h-s3p"/>
-                            <constraint firstItem="oiz-wm-jOB" firstAttribute="top" secondItem="rCj-rr-Oc8" secondAttribute="bottom" constant="8" symbolic="YES" id="IhM-G4-LYr"/>
-                            <constraint firstItem="LJy-ui-gej" firstAttribute="top" secondItem="oiz-wm-jOB" secondAttribute="bottom" constant="8" symbolic="YES" id="JFD-lD-cpf"/>
-                            <constraint firstItem="rCj-rr-Oc8" firstAttribute="centerX" secondItem="UV1-LF-fuH" secondAttribute="centerX" id="LjP-vS-HB3"/>
-                            <constraint firstItem="5aj-mi-hab" firstAttribute="centerY" secondItem="UV1-LF-fuH" secondAttribute="centerY" multiplier="0.7" id="N2y-qJ-wch"/>
-                            <constraint firstItem="5aj-mi-hab" firstAttribute="centerX" secondItem="UV1-LF-fuH" secondAttribute="centerX" id="Tln-BX-u3D"/>
-                            <constraint firstItem="aZz-Dx-ggC" firstAttribute="centerX" secondItem="UV1-LF-fuH" secondAttribute="centerX" id="Ytp-3t-927"/>
-                            <constraint firstItem="rCj-rr-Oc8" firstAttribute="top" secondItem="5aj-mi-hab" secondAttribute="bottom" constant="8" symbolic="YES" id="dQS-ya-O3W"/>
-                            <constraint firstItem="LJy-ui-gej" firstAttribute="centerX" secondItem="UV1-LF-fuH" secondAttribute="centerX" id="gTJ-IH-bT7"/>
+                            <constraint firstItem="Lhg-Wa-NlB" firstAttribute="trailing" secondItem="byl-iC-n83" secondAttribute="trailing" constant="4" id="GiG-Fo-fiJ"/>
+                            <constraint firstItem="C3I-It-Ygc" firstAttribute="top" secondItem="Lhg-Wa-NlB" secondAttribute="top" id="HW5-Ac-TGT"/>
+                            <constraint firstItem="byl-iC-n83" firstAttribute="bottom" secondItem="Lhg-Wa-NlB" secondAttribute="bottom" id="Hp9-bU-I4E"/>
+                            <constraint firstItem="C3I-It-Ygc" firstAttribute="trailing" secondItem="Lhg-Wa-NlB" secondAttribute="trailing" constant="-20" id="kaX-YA-sNt"/>
+                            <constraint firstItem="byl-iC-n83" firstAttribute="leading" secondItem="Lhg-Wa-NlB" secondAttribute="leading" constant="4" id="lHk-LQ-LmD"/>
+                            <constraint firstItem="Lhg-Wa-NlB" firstAttribute="leading" secondItem="C3I-It-Ygc" secondAttribute="leading" constant="-20" id="zcY-dG-23I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home Page" id="cYX-AN-DoC"/>
+                    <connections>
+                        <outlet property="italianImage" destination="kKN-Ts-uhN" id="MIR-iv-zuE"/>
+                        <outlet property="tapGestureRecognizer" destination="kMy-Aq-B0w" id="C9A-o8-Wtv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPE-FO-mdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kMy-Aq-B0w">
+                    <connections>
+                        <segue destination="ev7-JJ-ogn" kind="show" id="c8L-dK-1gz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="491" y="-61"/>
         </scene>
+        <!--Italian-->
+        <scene sceneID="nZF-Fx-zcf">
+            <objects>
+                <viewController id="ev7-JJ-ogn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8eT-ct-fjX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3NL-zC-FaI"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Italian" id="ehc-Az-aGa">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="kRJ-BV-Zem">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Uea-M2-dV2">
+                                <rect key="frame" x="290" y="4.6666666666666679" width="87" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Cart" image="cart" catalog="system"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hqe-7E-hZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-415" y="676"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="B8t-Ue-Avg"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="Image" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="Image 1" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

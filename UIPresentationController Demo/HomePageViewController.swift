@@ -12,9 +12,12 @@ class HomePageViewController: UIViewController {
 	lazy var slideInTransitionDelegate = SlideInPresentationManager()
 	var cart: [String] = []
 	
+	@IBOutlet weak var italianImage: UIImageView!
+	@IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		italianImage.addGestureRecognizer(tapGestureRecognizer)
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
