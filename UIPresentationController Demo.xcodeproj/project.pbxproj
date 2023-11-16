@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E2FD4042B0663C3001063A9 /* ScaledHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2FD4032B0663C2001063A9 /* ScaledHeightImageView.swift */; };
+		3E2FD4062B06657C001063A9 /* ItalianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2FD4052B06657C001063A9 /* ItalianViewController.swift */; };
+		3E2FD4082B066B4B001063A9 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2FD4072B066B4B001063A9 /* AppState.swift */; };
+		3E2FD40A2B066B79001063A9 /* AppStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2FD4092B066B79001063A9 /* AppStateViewController.swift */; };
+		3E2FD40C2B066E25001063A9 /* GeorgianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2FD40B2B066E25001063A9 /* GeorgianViewController.swift */; };
+		3E2FD40F2B067052001063A9 /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2FD40E2B067052001063A9 /* SlideInPresentationAnimator.swift */; };
+		3E2FD4112B0675CC001063A9 /* ItalianCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2FD4102B0675CC001063A9 /* ItalianCollectionViewCell.swift */; };
 		3EA78C392B02415A0055C4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C382B02415A0055C4FE /* AppDelegate.swift */; };
 		3EA78C3B2B02415A0055C4FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C3A2B02415A0055C4FE /* SceneDelegate.swift */; };
 		3EA78C3D2B02415A0055C4FE /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C3C2B02415A0055C4FE /* HomePageViewController.swift */; };
@@ -14,11 +21,18 @@
 		3EA78C422B02415B0055C4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA78C412B02415B0055C4FE /* Assets.xcassets */; };
 		3EA78C452B02415B0055C4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA78C432B02415B0055C4FE /* LaunchScreen.storyboard */; };
 		3EA78C4D2B0246BD0055C4FE /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C4C2B0246BD0055C4FE /* SlideInPresentationManager.swift */; };
-		3EA78C4F2B0248060055C4FE /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C4E2B0248060055C4FE /* Page2ViewController.swift */; };
+		3EA78C4F2B0248060055C4FE /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C4E2B0248060055C4FE /* CartViewController.swift */; };
 		3EA78C512B024AEE0055C4FE /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C502B024AEE0055C4FE /* SlideInPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E2FD4032B0663C2001063A9 /* ScaledHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledHeightImageView.swift; sourceTree = "<group>"; };
+		3E2FD4052B06657C001063A9 /* ItalianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItalianViewController.swift; sourceTree = "<group>"; };
+		3E2FD4072B066B4B001063A9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		3E2FD4092B066B79001063A9 /* AppStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateViewController.swift; sourceTree = "<group>"; };
+		3E2FD40B2B066E25001063A9 /* GeorgianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeorgianViewController.swift; sourceTree = "<group>"; };
+		3E2FD40E2B067052001063A9 /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
+		3E2FD4102B0675CC001063A9 /* ItalianCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItalianCollectionViewCell.swift; sourceTree = "<group>"; };
 		3EA78C352B02415A0055C4FE /* UIPresentationController Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIPresentationController Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA78C382B02415A0055C4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EA78C3A2B02415A0055C4FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +42,7 @@
 		3EA78C442B02415B0055C4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EA78C462B02415B0055C4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EA78C4C2B0246BD0055C4FE /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
-		3EA78C4E2B0248060055C4FE /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
+		3EA78C4E2B0248060055C4FE /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3EA78C502B024AEE0055C4FE /* SlideInPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E2FD40D2B067013001063A9 /* SlideIn */ = {
+			isa = PBXGroup;
+			children = (
+				3EA78C4C2B0246BD0055C4FE /* SlideInPresentationManager.swift */,
+				3EA78C502B024AEE0055C4FE /* SlideInPresentationController.swift */,
+				3E2FD40E2B067052001063A9 /* SlideInPresentationAnimator.swift */,
+			);
+			path = SlideIn;
+			sourceTree = "<group>";
+		};
 		3EA78C2C2B0241590055C4FE = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +86,8 @@
 		3EA78C372B02415A0055C4FE /* UIPresentationController Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3E2FD4102B0675CC001063A9 /* ItalianCollectionViewCell.swift */,
+				3E2FD40D2B067013001063A9 /* SlideIn */,
 				3EA78C382B02415A0055C4FE /* AppDelegate.swift */,
 				3EA78C3A2B02415A0055C4FE /* SceneDelegate.swift */,
 				3EA78C3C2B02415A0055C4FE /* HomePageViewController.swift */,
@@ -69,9 +95,12 @@
 				3EA78C412B02415B0055C4FE /* Assets.xcassets */,
 				3EA78C432B02415B0055C4FE /* LaunchScreen.storyboard */,
 				3EA78C462B02415B0055C4FE /* Info.plist */,
-				3EA78C4C2B0246BD0055C4FE /* SlideInPresentationManager.swift */,
-				3EA78C502B024AEE0055C4FE /* SlideInPresentationController.swift */,
-				3EA78C4E2B0248060055C4FE /* Page2ViewController.swift */,
+				3EA78C4E2B0248060055C4FE /* CartViewController.swift */,
+				3E2FD4032B0663C2001063A9 /* ScaledHeightImageView.swift */,
+				3E2FD4052B06657C001063A9 /* ItalianViewController.swift */,
+				3E2FD4072B066B4B001063A9 /* AppState.swift */,
+				3E2FD4092B066B79001063A9 /* AppStateViewController.swift */,
+				3E2FD40B2B066E25001063A9 /* GeorgianViewController.swift */,
 			);
 			path = "UIPresentationController Demo";
 			sourceTree = "<group>";
@@ -147,12 +176,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EA78C4F2B0248060055C4FE /* Page2ViewController.swift in Sources */,
+				3E2FD40A2B066B79001063A9 /* AppStateViewController.swift in Sources */,
+				3EA78C4F2B0248060055C4FE /* CartViewController.swift in Sources */,
+				3E2FD4112B0675CC001063A9 /* ItalianCollectionViewCell.swift in Sources */,
 				3EA78C4D2B0246BD0055C4FE /* SlideInPresentationManager.swift in Sources */,
+				3E2FD40C2B066E25001063A9 /* GeorgianViewController.swift in Sources */,
+				3E2FD40F2B067052001063A9 /* SlideInPresentationAnimator.swift in Sources */,
 				3EA78C3D2B02415A0055C4FE /* HomePageViewController.swift in Sources */,
+				3E2FD4082B066B4B001063A9 /* AppState.swift in Sources */,
+				3E2FD4042B0663C3001063A9 /* ScaledHeightImageView.swift in Sources */,
 				3EA78C392B02415A0055C4FE /* AppDelegate.swift in Sources */,
 				3EA78C512B024AEE0055C4FE /* SlideInPresentationController.swift in Sources */,
 				3EA78C3B2B02415A0055C4FE /* SceneDelegate.swift in Sources */,
+				3E2FD4062B06657C001063A9 /* ItalianViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

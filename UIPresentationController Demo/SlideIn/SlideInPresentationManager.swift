@@ -2,16 +2,12 @@
 //  SlideInPresentationManager.swift
 //  UIPresentationController Demo
 //
-//  Created by Kenneth Bruen on 13.11.2023.
-//
 
 import UIKit
 
-class SlideInPresentationManager: NSObject {
+class SlideInPresentationManager: NSObject, UIViewControllerTransitioningDelegate {
 	var direction: PresentationDirection = .left
-}
-
-extension SlideInPresentationManager : UIViewControllerTransitioningDelegate {
+	
 	func presentationController(
 		forPresented presented: UIViewController,
 		presenting: UIViewController?,
@@ -23,6 +19,14 @@ extension SlideInPresentationManager : UIViewControllerTransitioningDelegate {
 			direction: direction
 		)
 		return presentationController
+	}
+	
+	func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return SlideInPresentationAnimator(direction: direction, operation: .presenting)
+	}
+	
+	func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return SlideInPresentationAnimator(direction: direction, operation: .dismissing)
 	}
 }
 

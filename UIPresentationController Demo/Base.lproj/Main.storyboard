@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,8 +46,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ETy-O4-eMz">
                                         <rect key="frame" x="0.0" y="0.0" width="188.66666666666666" height="375.66666666666669"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="kKN-Ts-uhN">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Italian" translatesAutoresizingMaskIntoConstraints="NO" id="kKN-Ts-uhN" customClass="ScaledHeightImageView" customModule="UIPresentationController_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="188.66666666666666" height="341.33333333333331"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="kMy-Aq-B0w" appends="YES" id="dbB-xC-kOp"/>
+                                                </connections>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwd-Gq-H1d">
                                                 <rect key="frame" x="0.0" y="341.33333333333331" width="188.66666666666666" height="34.333333333333314"/>
@@ -65,13 +69,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EZx-Tt-1Fv">
                                         <rect key="frame" x="196.66666666666663" y="0.0" width="188.33333333333337" height="375.66666666666669"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="JUW-Mk-eQn">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Georgian" translatesAutoresizingMaskIntoConstraints="NO" id="JUW-Mk-eQn" customClass="ScaledHeightImageView" customModule="UIPresentationController_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="188.33333333333334" height="341.33333333333331"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="oRy-H5-XoQ" appends="YES" id="Kay-29-v9j"/>
+                                                </connections>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sb-ys-1sq">
                                                 <rect key="frame" x="0.0" y="341.33333333333331" width="188.33333333333334" height="34.333333333333314"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Georgian"/>
+                                                <connections>
+                                                    <segue destination="mjm-n2-aKm" kind="show" id="ro3-0w-KLd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -90,15 +100,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home Page" id="cYX-AN-DoC"/>
-                    <connections>
-                        <outlet property="italianImage" destination="kKN-Ts-uhN" id="MIR-iv-zuE"/>
-                        <outlet property="tapGestureRecognizer" destination="kMy-Aq-B0w" id="C9A-o8-Wtv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPE-FO-mdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="kMy-Aq-B0w">
                     <connections>
                         <segue destination="ev7-JJ-ogn" kind="show" id="c8L-dK-1gz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="oRy-H5-XoQ">
+                    <connections>
+                        <segue destination="mjm-n2-aKm" kind="show" id="5cK-yW-OzB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -107,38 +118,222 @@
         <!--Italian-->
         <scene sceneID="nZF-Fx-zcf">
             <objects>
-                <viewController id="ev7-JJ-ogn" sceneMemberID="viewController">
+                <viewController id="ev7-JJ-ogn" customClass="ItalianViewController" customModule="UIPresentationController_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8eT-ct-fjX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JrH-p7-NAC">
+                                <rect key="frame" x="20" y="123" width="353" height="675"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WiB-dL-04N">
+                                    <size key="itemSize" width="171" height="174"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ojA-8I-hSR" customClass="ItalianCollectionViewCell" customModule="UIPresentationController_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XLk-ki-rga">
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="174"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XLO-6M-eWm" customClass="ScaledHeightImageView" customModule="UIPresentationController_Demo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="131"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9u-QW-ycF">
+                                                    <rect key="frame" x="48" y="139" width="75" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="f9u-QW-ycF" secondAttribute="bottom" id="EbP-fl-oe6"/>
+                                                <constraint firstAttribute="trailing" secondItem="XLO-6M-eWm" secondAttribute="trailing" id="MXh-YB-fKl"/>
+                                                <constraint firstItem="XLO-6M-eWm" firstAttribute="top" secondItem="XLk-ki-rga" secondAttribute="top" id="Txo-iM-aZA"/>
+                                                <constraint firstItem="XLO-6M-eWm" firstAttribute="leading" secondItem="XLk-ki-rga" secondAttribute="leading" id="oQf-Qb-dDJ"/>
+                                                <constraint firstItem="f9u-QW-ycF" firstAttribute="centerX" secondItem="XLk-ki-rga" secondAttribute="centerX" id="qga-yq-9bb"/>
+                                                <constraint firstItem="f9u-QW-ycF" firstAttribute="top" secondItem="XLO-6M-eWm" secondAttribute="bottom" constant="8" symbolic="YES" id="wcv-yQ-als"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="171" height="174"/>
+                                        <connections>
+                                            <outlet property="button" destination="f9u-QW-ycF" id="4Gc-Ck-VEH"/>
+                                            <outlet property="image" destination="XLO-6M-eWm" id="QBy-57-H3F"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ev7-JJ-ogn" id="xHo-HB-oVH"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3NL-zC-FaI"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="JrH-p7-NAC" firstAttribute="leading" secondItem="3NL-zC-FaI" secondAttribute="leading" constant="20" id="0O4-op-hWk"/>
+                            <constraint firstItem="JrH-p7-NAC" firstAttribute="top" secondItem="3NL-zC-FaI" secondAttribute="top" constant="20" id="Pov-sR-Mui"/>
+                            <constraint firstItem="3NL-zC-FaI" firstAttribute="trailing" secondItem="JrH-p7-NAC" secondAttribute="trailing" constant="20" id="fXC-Nh-nmj"/>
+                            <constraint firstItem="3NL-zC-FaI" firstAttribute="bottom" secondItem="JrH-p7-NAC" secondAttribute="bottom" constant="20" id="naA-Ut-5Km"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Italian" id="ehc-Az-aGa">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="kRJ-BV-Zem">
+                        <barButtonItem key="rightBarButtonItem" id="kRJ-BV-Zem">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Uea-M2-dV2">
                                 <rect key="frame" x="290" y="4.6666666666666679" width="87" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Cart" image="cart" catalog="system"/>
+                                <connections>
+                                    <segue destination="KZj-mu-Svr" kind="presentation" id="4D7-i8-CIZ"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqe-7E-hZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415" y="676"/>
+            <point key="canvasLocation" x="-416.03053435114504" y="743.66197183098598"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="UCC-at-Y10">
+            <objects>
+                <viewController id="KZj-mu-Svr" customClass="CartViewController" customModule="UIPresentationController_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wt9-fF-c2R">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vwf-Kx-aiL">
+                                <rect key="frame" x="20" y="79" width="353" height="641"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="KZj-mu-Svr" id="lpc-RI-nxS"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhW-HA-Cll">
+                                <rect key="frame" x="169.66666666666666" y="728" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Buy"/>
+                                <connections>
+                                    <action selector="onBuy:" destination="KZj-mu-Svr" eventType="touchUpInside" id="VZm-9f-DeR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LU5-R5-VeH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vwf-Kx-aiL" firstAttribute="leading" secondItem="LU5-R5-VeH" secondAttribute="leading" constant="20" id="4yx-S9-tDz"/>
+                            <constraint firstItem="LU5-R5-VeH" firstAttribute="trailing" secondItem="Vwf-Kx-aiL" secondAttribute="trailing" constant="20" id="Cuz-9R-FoC"/>
+                            <constraint firstItem="nhW-HA-Cll" firstAttribute="top" secondItem="Vwf-Kx-aiL" secondAttribute="bottom" constant="8" symbolic="YES" id="PAN-XK-Fwu"/>
+                            <constraint firstItem="Vwf-Kx-aiL" firstAttribute="top" secondItem="LU5-R5-VeH" secondAttribute="top" constant="20" id="dEw-gK-UKk"/>
+                            <constraint firstItem="nhW-HA-Cll" firstAttribute="centerX" secondItem="LU5-R5-VeH" secondAttribute="centerX" id="hjc-LY-zAb"/>
+                            <constraint firstItem="LU5-R5-VeH" firstAttribute="bottom" secondItem="nhW-HA-Cll" secondAttribute="bottom" constant="20" id="p5P-pg-lgu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qTH-19-HxX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="1501"/>
+        </scene>
+        <!--Georgian-->
+        <scene sceneID="7HN-Mz-R0Q">
+            <objects>
+                <viewController id="mjm-n2-aKm" customClass="GeorgianViewController" customModule="UIPresentationController_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yic-Am-8OC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W9h-i7-bBF">
+                                <rect key="frame" x="20" y="83" width="353" height="715"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="11W-Dn-9LO">
+                                    <size key="itemSize" width="171" height="174"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="3ZD-AW-IsA" customClass="ItalianCollectionViewCell" customModule="UIPresentationController_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7O0-qC-Sle">
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="174"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S6g-Ys-J4u" customClass="ScaledHeightImageView" customModule="UIPresentationController_Demo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="131"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlm-WV-GHe">
+                                                    <rect key="frame" x="48" y="139" width="75" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="S6g-Ys-J4u" firstAttribute="top" secondItem="7O0-qC-Sle" secondAttribute="top" id="PX0-Xg-LMr"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zlm-WV-GHe" secondAttribute="bottom" id="Q02-ki-c4a"/>
+                                                <constraint firstItem="Zlm-WV-GHe" firstAttribute="top" secondItem="S6g-Ys-J4u" secondAttribute="bottom" constant="8" symbolic="YES" id="Z7D-go-9xb"/>
+                                                <constraint firstAttribute="trailing" secondItem="S6g-Ys-J4u" secondAttribute="trailing" id="eNb-8Y-afe"/>
+                                                <constraint firstItem="S6g-Ys-J4u" firstAttribute="leading" secondItem="7O0-qC-Sle" secondAttribute="leading" id="hgT-uZ-VmP"/>
+                                                <constraint firstItem="Zlm-WV-GHe" firstAttribute="centerX" secondItem="7O0-qC-Sle" secondAttribute="centerX" id="qwv-M3-W7n"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="171" height="174"/>
+                                        <connections>
+                                            <outlet property="button" destination="Zlm-WV-GHe" id="7sM-ET-ebX"/>
+                                            <outlet property="image" destination="S6g-Ys-J4u" id="L8m-hY-9aB"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="mjm-n2-aKm" id="v23-eS-D3b"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rbI-I9-FFv"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="rbI-I9-FFv" firstAttribute="bottom" secondItem="W9h-i7-bBF" secondAttribute="bottom" constant="20" id="0sS-5M-3gN"/>
+                            <constraint firstItem="rbI-I9-FFv" firstAttribute="trailing" secondItem="W9h-i7-bBF" secondAttribute="trailing" constant="20" id="RIv-7o-y8z"/>
+                            <constraint firstItem="W9h-i7-bBF" firstAttribute="leading" secondItem="rbI-I9-FFv" secondAttribute="leading" constant="20" id="VyL-xg-cPX"/>
+                            <constraint firstItem="rbI-I9-FFv" firstAttribute="top" secondItem="W9h-i7-bBF" secondAttribute="top" constant="20" id="Wzl-Ow-eLf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Georgian" id="CSy-X4-baZ">
+                        <barButtonItem key="rightBarButtonItem" id="nWa-SC-i2o">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Eql-ZY-Rwc">
+                                <rect key="frame" x="290" y="4.6666666666666679" width="87" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Cart" image="cart" catalog="system"/>
+                                <connections>
+                                    <segue destination="KZj-mu-Svr" kind="presentation" id="Fxx-D0-7vI"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nHK-Md-QZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1323" y="744"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="5cK-yW-OzB"/>
+        <segue reference="Fxx-D0-7vI"/>
         <segue reference="B8t-Ue-Avg"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Image" width="341.33334350585938" height="341.33334350585938"/>
-        <image name="Image 1" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="Georgian" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="Italian" width="341.33334350585938" height="341.33334350585938"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
