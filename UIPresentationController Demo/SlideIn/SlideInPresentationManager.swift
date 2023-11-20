@@ -2,11 +2,16 @@
 //  SlideInPresentationManager.swift
 //  UIPresentationController Demo
 //
+//  Inspired by: https://www.kodeco.com/3636807-uipresentationcontroller-tutorial-getting-started?page=3
+//
 
 import UIKit
 
 class SlideInPresentationManager: NSObject, UIViewControllerTransitioningDelegate {
 	var direction: PresentationDirection = .left
+	var mainAxisAspectRatio = 2.0/3.0
+	var crossAxisAspectRatio = 1.0
+	var crossAxisAlignment: Alignment = .stretch
 	
 	func presentationController(
 		forPresented presented: UIViewController,
@@ -16,7 +21,10 @@ class SlideInPresentationManager: NSObject, UIViewControllerTransitioningDelegat
 		let presentationController = SlideInPresentationController(
 			presentedViewController: presented,
 			presenting: presenting,
-			direction: direction
+			direction: direction,
+			mainAxisAspectRatio: mainAxisAspectRatio,
+			crossAxisAspectRatio: crossAxisAspectRatio,
+			crossAxisAlignment: crossAxisAlignment
 		)
 		return presentationController
 	}
@@ -35,4 +43,11 @@ enum PresentationDirection {
 	case bottom
 	case left
 	case right
+}
+
+enum Alignment {
+	case start
+	case middle
+	case end
+	case stretch
 }

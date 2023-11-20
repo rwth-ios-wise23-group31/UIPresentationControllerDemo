@@ -2,7 +2,7 @@
 //  SlideInPresentation.swift
 //  UIPresentationController Demo
 //
-//  Created by Kenneth Bruen on 16.11.2023.
+//  Inspired by: https://www.kodeco.com/3636807-uipresentationcontroller-tutorial-getting-started?page=3
 //
 
 import UIKit

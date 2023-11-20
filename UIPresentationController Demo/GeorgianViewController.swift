@@ -7,12 +7,27 @@ import UIKit
 
 class GeorgianViewController: AppStateViewController {
 	lazy var slideInTransitionDelegate = SlideInPresentationManager()
+	var detailCell: ItalianCollectionViewCell?
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
 		
 		if let controller = segue.destination as? CartViewController {
+			slideInTransitionDelegate = SlideInPresentationManager()
 			slideInTransitionDelegate.direction = .right
+			slideInTransitionDelegate.mainAxisAspectRatio = 2.0/3.0
+			controller.transitioningDelegate = slideInTransitionDelegate
+			controller.modalPresentationStyle = .custom
+		}
+		
+		if let detailCell = detailCell, let controller = segue.destination as? DetailViewController {
+			controller.imageName = detailCell.imageName
+			controller.itemName = detailCell.buttonText
+			controller.itemDescription = detailCell.itemDescription
+			
+			slideInTransitionDelegate = SlideInPresentationManager()
+			slideInTransitionDelegate.direction = .bottom
+			slideInTransitionDelegate.mainAxisAspectRatio = 1.0/3.0
 			controller.transitioningDelegate = slideInTransitionDelegate
 			controller.modalPresentationStyle = .custom
 		}
@@ -28,12 +43,14 @@ extension GeorgianViewController : UICollectionViewDataSource {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 		if let cell = cell as? ItalianCollectionViewCell {
 			if indexPath.row == 0 {
-				cell.button.titleLabel!.text = "Khinkali"
-				cell.image.image = UIImage(named: "Khinkali")
+				cell.update(withText: "Khinkali", image: "Khinkali", description: "Khinkali are super flavorful, meat-filled dumplings")
 			}
 			else {
-				cell.button.titleLabel!.text = "Ajaruli"
-				cell.image.image = UIImage(named: "Ajaruli")
+				cell.update(withText: "Ajaruli", image: "Ajaruli", description: "")
+			}
+			cell.performAction = { cell in
+				self.detailCell = cell
+				self.performSegue(withIdentifier: "ShowDetail", sender: nil)
 			}
 		}
 		return cell

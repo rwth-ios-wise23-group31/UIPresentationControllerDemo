@@ -23,6 +23,7 @@
 		3EA78C4D2B0246BD0055C4FE /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C4C2B0246BD0055C4FE /* SlideInPresentationManager.swift */; };
 		3EA78C4F2B0248060055C4FE /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C4E2B0248060055C4FE /* CartViewController.swift */; };
 		3EA78C512B024AEE0055C4FE /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA78C502B024AEE0055C4FE /* SlideInPresentationController.swift */; };
+		3EE073052B0B8C4400EC6DC2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE073042B0B8C4400EC6DC2 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3EA78C4C2B0246BD0055C4FE /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		3EA78C4E2B0248060055C4FE /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3EA78C502B024AEE0055C4FE /* SlideInPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
+		3EE073042B0B8C4400EC6DC2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		3EA78C372B02415A0055C4FE /* UIPresentationController Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3EE073042B0B8C4400EC6DC2 /* DetailViewController.swift */,
 				3E2FD4102B0675CC001063A9 /* ItalianCollectionViewCell.swift */,
 				3E2FD40D2B067013001063A9 /* SlideIn */,
 				3EA78C382B02415A0055C4FE /* AppDelegate.swift */,
@@ -97,9 +100,9 @@
 				3EA78C462B02415B0055C4FE /* Info.plist */,
 				3EA78C4E2B0248060055C4FE /* CartViewController.swift */,
 				3E2FD4032B0663C2001063A9 /* ScaledHeightImageView.swift */,
-				3E2FD4052B06657C001063A9 /* ItalianViewController.swift */,
 				3E2FD4072B066B4B001063A9 /* AppState.swift */,
 				3E2FD4092B066B79001063A9 /* AppStateViewController.swift */,
+				3E2FD4052B06657C001063A9 /* ItalianViewController.swift */,
 				3E2FD40B2B066E25001063A9 /* GeorgianViewController.swift */,
 			);
 			path = "UIPresentationController Demo";
@@ -189,6 +192,7 @@
 				3EA78C512B024AEE0055C4FE /* SlideInPresentationController.swift in Sources */,
 				3EA78C3B2B02415A0055C4FE /* SceneDelegate.swift in Sources */,
 				3E2FD4062B06657C001063A9 /* ItalianViewController.swift in Sources */,
+				3EE073052B0B8C4400EC6DC2 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

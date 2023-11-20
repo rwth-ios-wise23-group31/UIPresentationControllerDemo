@@ -158,6 +158,7 @@
                                                 <constraint firstItem="f9u-QW-ycF" firstAttribute="top" secondItem="XLO-6M-eWm" secondAttribute="bottom" constant="8" symbolic="YES" id="wcv-yQ-als"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <gestureRecognizers/>
                                         <size key="customSize" width="171" height="174"/>
                                         <connections>
                                             <outlet property="button" destination="f9u-QW-ycF" id="4Gc-Ck-VEH"/>
@@ -171,7 +172,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3NL-zC-FaI"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JrH-p7-NAC" firstAttribute="leading" secondItem="3NL-zC-FaI" secondAttribute="leading" constant="20" id="0O4-op-hWk"/>
                             <constraint firstItem="JrH-p7-NAC" firstAttribute="top" secondItem="3NL-zC-FaI" secondAttribute="top" constant="20" id="Pov-sR-Mui"/>
@@ -192,6 +193,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="hhb-T3-wGD" kind="presentation" identifier="ShowDetail" id="7q5-il-uWR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqe-7E-hZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,6 +240,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTH-19-HxX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="514" y="1501"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="WHH-CZ-o20">
+            <objects>
+                <viewController id="hhb-T3-wGD" customClass="DetailViewController" customModule="UIPresentationController_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VKJ-uy-vef">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dRQ-cE-ytP">
+                                <rect key="frame" x="8" y="67" width="184.66666666666666" height="708"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iIl-w1-lum">
+                                <rect key="frame" x="200.66666666666663" y="67" width="184.33333333333337" height="708"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNn-ik-iyy">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.33333333333334" height="600"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efK-Ah-Ggy">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.33333333333334" height="600"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="efK-Ah-Ggy" secondAttribute="bottom" id="Ayk-kX-q2Z"/>
+                                            <constraint firstItem="efK-Ah-Ggy" firstAttribute="top" secondItem="qNn-ik-iyy" secondAttribute="top" id="CqV-Kl-Eac"/>
+                                            <constraint firstAttribute="trailing" secondItem="efK-Ah-Ggy" secondAttribute="trailing" id="U0H-mJ-ZhI"/>
+                                            <constraint firstItem="efK-Ah-Ggy" firstAttribute="leading" secondItem="qNn-ik-iyy" secondAttribute="leading" id="v5O-CI-CQc"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyX-HF-hKc">
+                                        <rect key="frame" x="0.0" y="608" width="184.33333333333334" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Gyz-gC-poS"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Add to Cart"/>
+                                        <connections>
+                                            <action selector="onAddToCart:" destination="hhb-T3-wGD" eventType="touchUpInside" id="WP3-aY-G7p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wH4-3L-vUg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wH4-3L-vUg" firstAttribute="trailing" secondItem="iIl-w1-lum" secondAttribute="trailing" constant="8" id="4JG-L6-o0z"/>
+                            <constraint firstItem="iIl-w1-lum" firstAttribute="width" secondItem="dRQ-cE-ytP" secondAttribute="width" id="5S4-LG-JZr"/>
+                            <constraint firstItem="iIl-w1-lum" firstAttribute="top" secondItem="wH4-3L-vUg" secondAttribute="top" constant="8" id="6Hk-1R-UZD"/>
+                            <constraint firstItem="iIl-w1-lum" firstAttribute="leading" secondItem="dRQ-cE-ytP" secondAttribute="trailing" constant="8" id="ADf-02-oD1"/>
+                            <constraint firstItem="wH4-3L-vUg" firstAttribute="bottom" secondItem="iIl-w1-lum" secondAttribute="bottom" constant="8" id="Cap-sU-4LW"/>
+                            <constraint firstItem="dRQ-cE-ytP" firstAttribute="top" secondItem="wH4-3L-vUg" secondAttribute="top" constant="8" id="Zqo-Cr-1bd"/>
+                            <constraint firstItem="wH4-3L-vUg" firstAttribute="bottom" secondItem="dRQ-cE-ytP" secondAttribute="bottom" constant="8" id="ifu-b1-PXW"/>
+                            <constraint firstItem="dRQ-cE-ytP" firstAttribute="leading" secondItem="wH4-3L-vUg" secondAttribute="leading" constant="8" id="mRp-oA-8qR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="dRQ-cE-ytP" id="nx0-uv-tgU"/>
+                        <outlet property="label" destination="efK-Ah-Ggy" id="olU-4M-0hl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXx-L7-G77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="490.83969465648852" y="743.66197183098598"/>
         </scene>
         <!--Georgian-->
         <scene sceneID="7HN-Mz-R0Q">
@@ -293,7 +365,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rbI-I9-FFv"/>
-                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rbI-I9-FFv" firstAttribute="bottom" secondItem="W9h-i7-bBF" secondAttribute="bottom" constant="20" id="0sS-5M-3gN"/>
                             <constraint firstItem="rbI-I9-FFv" firstAttribute="trailing" secondItem="W9h-i7-bBF" secondAttribute="trailing" constant="20" id="RIv-7o-y8z"/>
@@ -314,6 +386,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="hhb-T3-wGD" kind="presentation" identifier="ShowDetail" id="JEi-D5-O0c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHK-Md-QZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,6 +397,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="5cK-yW-OzB"/>
+        <segue reference="7q5-il-uWR"/>
         <segue reference="Fxx-D0-7vI"/>
         <segue reference="B8t-Ue-Avg"/>
     </inferredMetricsTieBreakers>
@@ -331,12 +407,6 @@
         <image name="cart" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
